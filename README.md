@@ -11,7 +11,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
 3. Unit Testing
 4. E2E Testing
 5. Docker
-6. Routing (/home and /about pages)
+6. Routing (`/home` and `/about` pages)
 7. HTTP Request via Service (Get public IP address)
 
 ## Install Dependencies
