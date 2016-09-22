@@ -21,7 +21,7 @@ npm cache clean
 npm install
 ```
 
-## Uninstall Dependencies
+## Remove Dependencies & Built Folders
 
 ```bash
 rm -rf node_modules
