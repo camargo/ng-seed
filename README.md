@@ -2,9 +2,9 @@
 
 This is a basic Angular 2 seed project that you can use to bootstrap your new Angular 2 project.
 
-To start change all occurrences of "app" in this project to your app name.
+To get started, change all occurrences of `"app"` in this project to your app name.
 
-Features include:
+## Features
 
 1. Webpack
 2. Linting (Part of build process)
