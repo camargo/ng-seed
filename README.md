@@ -38,8 +38,8 @@ npm start
 
 ```bash
 npm run build
-docker build -t ng-seed-image .
-docker run --name ng-seed -d -p 8080:80 ng-seed-image
+docker build -t app-image .
+docker run --name app -d -p 8080:80 app-image
 ```
 
 ## Run Unit Tests
