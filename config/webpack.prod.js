@@ -12,7 +12,7 @@ module.exports = webpackMerge(commonConfig, {
   entry: {
     'polyfills': './src/browser.polyfills.ts',
     'vendor': './src/browser.vendor.ts',
-    'app': './src/browser.main.aot.ts'
+    'app': './src/browser.main.jit.ts'
   },
 
   output: {
