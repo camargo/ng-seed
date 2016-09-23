@@ -49,7 +49,7 @@ docker run --name app -d -p 8080:80 app-image
 npm run unit
 ```
 
-## Rum E2E Tests
+## Run E2E Tests
 
 ```bash
 npm run e2e
