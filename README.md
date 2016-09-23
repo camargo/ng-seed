@@ -12,7 +12,9 @@ To get started, change all occurrences of `"app"` in this project to your app na
 4. Unit Testing
 5. E2E Testing
 6. Docker
-7. Routing (`/home` and `/about` pages)
+7. Routing
+  - `/home`:  Not lazy-loaded
+  - `/about`: Lazy-loaded
 8. HTTP Request via Service (Get public IP address)
 
 ## Install Dependencies

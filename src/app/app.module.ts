@@ -6,7 +6,6 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { routing, appRoutingProviders }  from './app.routing';
 
-import { AboutModule } from './about';
 import { HomeModule } from './home';
 
 import { AppApiService } from './shared';
@@ -17,7 +16,6 @@ import { AppApiService } from './shared';
     FormsModule,
     HttpModule,
     routing,
-    AboutModule,
     HomeModule
   ],
   declarations: [

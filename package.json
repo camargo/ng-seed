@@ -31,6 +31,7 @@
     "@types/protractor": "^1.5.20",
     "@types/selenium-webdriver": "2.44.28",
     "angular2-template-loader": "^0.5.0",
+    "angular2-router-loader": "^0.2.2",
     "awesome-typescript-loader": "^2.2.4",
     "codelyzer": "~0.0.28",
     "css-loader": "^0.25.0",
