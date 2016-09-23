@@ -6,13 +6,14 @@ To get started, change all occurrences of `"app"` in this project to your app na
 
 ## Features
 
-1. Webpack
-2. Linting (Part of build process)
-3. Unit Testing
-4. E2E Testing
-5. Docker
-6. Routing (`/home` and `/about` pages)
-7. HTTP Request via Service (Get public IP address)
+1. Latest version of Angular 2: 2.0.0 (2016-09-14)
+2. Webpack
+3. Linting (Part of build process)
+4. Unit Testing
+5. E2E Testing
+6. Docker
+7. Routing (`/home` and `/about` pages)
+8. HTTP Request via Service (Get public IP address)
 
 ## Install Dependencies
 
