@@ -1,6 +1,6 @@
 # ng-seed
 
-This is a basic Angular 2 seed project that you can use to bootstrap your new Angular 2 project.
+This is a basic application that you can use to bootstrap your new Angular 2 project.
 
 To get started, change all occurrences of `"app"` in this project to your app name.
 
