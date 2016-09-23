@@ -9,6 +9,12 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
 
+  entry: {
+    'polyfills': './src/browser.polyfills.ts',
+    'vendor': './src/browser.vendor.ts',
+    'app': './src/browser.main.aot.ts'
+  },
+
   output: {
     path: helpers.root('dist'),
     publicPath: '/',
@@ -27,10 +33,10 @@ module.exports = webpackMerge(commonConfig, {
       mangle: {
         keep_fnames: true
       }
-      }),
-      new ExtractTextPlugin('[name].[hash].css'),
-      new webpack.DefinePlugin({
-        'process.env': {
+    }),
+    new ExtractTextPlugin('[name].[hash].css'),
+    new webpack.DefinePlugin({
+      'process.env': {
         'ENV': JSON.stringify(ENV)
       }
     })
