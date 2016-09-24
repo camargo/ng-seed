@@ -39,7 +39,7 @@ rm -rf dist
 npm start
 ```
 
-Visit [http://localhost:8080/](http://localhost:8080/) to view running application.
+Visit [http://localhost:8080/](http://localhost:8080/) to view the running application.
 
 ## Run via Docker (Prod Mode)
 
@@ -58,7 +58,7 @@ npm run build
 docker run --name app -v $(pwd)/dist:/usr/share/nginx/html:ro -d -p 8081:80 nginx
 ```
 
-Visit [http://localhost:8081/](http://localhost:8081/) to view running application.
+Visit [http://localhost:8081/](http://localhost:8081/) to view the running application.
 
 ## Run Unit Tests
 
