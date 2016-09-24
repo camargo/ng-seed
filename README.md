@@ -39,11 +39,21 @@ npm start
 
 ## Run via Docker (Prod Mode)
 
+Build image and run container from that image:
+
 ```bash
 npm run build
 docker build -t app-image .
-docker run --name app -d -p 8080:80 app-image
+docker run --name app -d -p 8081:80 app-image
 ```
+
+Just run container:
+
+```bash
+docker run --name app -v $(pwd)/dist:/usr/share/nginx/html:ro -d -p 8081:80 nginx
+```
+
+Visit [http://localhost:8081/](http://localhost:8081/) to view running application.
 
 ## Run Unit Tests
 
