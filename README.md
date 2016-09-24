@@ -17,9 +17,10 @@ To get started, change all occurrences of `"app"` in this project to your app na
   - `/about`: Lazy-loaded
 8. HTTP Request via Service (Get public IP address)
 
-## Install Dependencies
+## Download Project & Install Dependencies
 
 ```bash
+git clone https://github.com/camargo/ng-seed.git
 npm cache clean
 npm install
 ```
@@ -50,6 +51,7 @@ docker run --name app -d -p 8081:80 app-image
 Just run container:
 
 ```bash
+npm run build
 docker run --name app -v $(pwd)/dist:/usr/share/nginx/html:ro -d -p 8081:80 nginx
 ```
 
