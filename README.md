@@ -39,6 +39,8 @@ rm -rf dist
 npm start
 ```
 
+Visit [http://localhost:8081/](http://localhost:8080/) to view running application.
+
 ## Run via Docker (Prod Mode)
 
 Build image and run container from that image:
