@@ -21,6 +21,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
 
 ```bash
 git clone https://github.com/camargo/ng-seed.git
+cd ng-seed
 npm cache clean
 npm install
 ```
