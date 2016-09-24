@@ -9,12 +9,6 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 module.exports = webpackMerge(commonConfig, {
   devtool: 'source-map',
 
-  entry: {
-    'polyfills': './src/browser.polyfills.ts',
-    'vendor': './src/browser.vendor.ts',
-    'app': './src/browser.main.jit.ts'
-  },
-
   output: {
     path: helpers.root('dist'),
     publicPath: '/',

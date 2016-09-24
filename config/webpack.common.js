@@ -8,6 +8,12 @@ module.exports = {
     extensions: ['', '.js', '.ts']
   },
 
+  entry: {
+    'polyfills': './src/browser.polyfills.ts',
+    'vendor': './src/browser.vendor.ts',
+    'app': './src/browser.main.ts'
+  },
+
   module: {
     preLoaders: [
       {
