@@ -6,7 +6,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
 
 ## Features
 
-1. Latest stable version of Angular 2: `2.0.2 (2016-10-05)`
+1. Latest stable version of Angular 2: `2.1.0 (2016-10-12)`
 2. Webpack
 3. Linting (Part of build process)
 4. Unit Testing
