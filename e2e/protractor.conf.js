@@ -2,7 +2,7 @@ exports.config = {
   baseUrl: 'http://localhost:8080/',
 
   specs: [
-    './../src/app/**/*.e2e-spec.ts'
+    './specs/**/*.e2e.spec.ts'
   ],
   exclude: [],
 
@@ -27,12 +27,13 @@ exports.config = {
   },
 
   onPrepare: function () {
+    /*
     var SpecReporter = require('jasmine-spec-reporter');
     jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: true}));
+    */
 
-    browser.ignoreSynchronization = true;
+    browser.ignoreSynchronization = false;
   },
-
 
   /**
    * Angular 2 configuration

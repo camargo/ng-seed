@@ -1,4 +1,5 @@
-describe('about', function () {
+
+describe('app', function () {
 
   beforeEach(function () {
     browser.get('/');

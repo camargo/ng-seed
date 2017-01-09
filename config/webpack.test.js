@@ -4,7 +4,7 @@ module.exports = {
   devtool: 'inline-source-map',
 
   resolve: {
-    extensions: ['', '.ts', '.js']
+    extensions: ['.ts', '.js']
   },
 
   module: {
@@ -18,22 +18,26 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: 'html'
+        loader: 'html-loader'
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'null'
+        loader: 'null-loader'
       },
       {
         test: /\.css$/,
         exclude: helpers.root('src', 'app'),
-        loader: 'null'
+        loader: 'null-loader'
       },
       {
         test: /\.css$/,
         include: helpers.root('src', 'app'),
-        loader: 'raw'
+        loader: 'raw-loader'
       }
     ]
+  },
+
+  performance: {
+    hints: false
   }
 }

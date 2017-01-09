@@ -6,9 +6,9 @@ To get started, change all occurrences of `"app"` in this project to your app na
 
 ## Features
 
-1. Latest stable version of Angular 2: `2.1.0 (2016-10-12)`
-2. Webpack
-3. Linting (Part of build process)
+1. Latest stable version of Angular: `4.0.0-beta.2 (2017-01-06)`
+2. Webpack 2
+3. Linting
 4. Unit Testing
 5. E2E Testing
 6. Docker
@@ -16,6 +16,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
   - `/home`:  Not lazy-loaded
   - `/about`: Lazy-loaded
 8. HTTP Request via Service (Get public IP address)
+9. Dev build (via Webpack Dev Server) and Prod build (via AOT)
 
 ## Download Project & Install Dependencies
 
@@ -36,7 +37,7 @@ rm -rf dist
 ## Run via Webpack (Dev Mode)
 
 ```bash
-npm start
+npm run build:dev
 ```
 
 Visit [http://localhost:8080/](http://localhost:8080/) to view the running application.
@@ -46,15 +47,15 @@ Visit [http://localhost:8080/](http://localhost:8080/) to view the running appli
 Build image and run container from that image:
 
 ```bash
-npm run build
-docker build -t app-image .
+npm run build:prod
+docker build -t app-image ./dist
 docker run --name app -d -p 8081:80 app-image
 ```
 
 Just run container:
 
 ```bash
-npm run build
+npm run build:prod
 docker run --name app -v $(pwd)/dist:/usr/share/nginx/html:ro -d -p 8081:80 nginx
 ```
 

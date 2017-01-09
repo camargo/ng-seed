@@ -1,38 +1,67 @@
-var webpack = require('webpack');
-var webpackMerge = require('webpack-merge');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var commonConfig = require('./webpack.common.js');
-var helpers = require('./helpers');
+let webpack = require('webpack');
+let ngToolsWebpack = require('@ngtools/webpack');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+let helpers = require('./helpers');
 
-const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
-
-module.exports = webpackMerge(commonConfig, {
-  devtool: 'source-map',
-
+let webpackProdConfig = {
+  entry: {
+    'vendor': './src/browser.vendor.ts',
+    'app': './src/browser.main.ts',
+    'polyfills': [
+      'core-js/es6',
+      'core-js/es7/reflect',
+      'zone.js/dist/zone'
+    ]
+  },
   output: {
-    path: helpers.root('dist'),
-    publicPath: '/',
-    filename: '[name].[hash].js',
-    chunkFilename: '[id].[hash].chunk.js'
+    path: __dirname + '/dist',
+    filename: '[name].[hash].js'
   },
-
-  htmlLoader: {
-    minimize: false // workaround for ng2
-  },
-
-  plugins: [
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: {
-        keep_fnames: true
+  module: {
+    loaders: [
+      {
+        test: /\.ts$/,
+        exclude: /\.spec.ts$/,
+        loader: '@ngtools/webpack'
+      },
+      {
+        test: /\.html$/,
+        loader: 'raw-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'raw-loader'
       }
+    ]
+  },
+  resolve: {
+    extensions: [ '.js', '.ts', '.html', '.css' ]
+  },
+  plugins: [
+    // see https://github.com/angular/angular/issues/11580
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+      './src'
+    ),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'polyfills'
     }),
-    new ExtractTextPlugin('[name].[hash].css'),
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
     new webpack.DefinePlugin({
-      'process.env': {
-        'ENV': JSON.stringify(ENV)
+      app: {
+        environment: JSON.stringify('prod')
       }
     })
   ]
-});
+
+};
+
+webpackProdConfig.plugins.push(new ngToolsWebpack.AotPlugin({
+  tsConfigPath: helpers.root('tsconfig.prod.json'),
+  entryModule: helpers.root('src' , 'app', 'app.module#AppModule'),
+  mainPath: helpers.root('src', 'browser.main.ts')
+}));
+
+module.exports = webpackProdConfig;

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { AboutComponent }   from './about.component';
-import { routing}  from './about.routing';
+import { routing }  from './about.routing';
 
 @NgModule({
   imports: [
