@@ -4,7 +4,7 @@
   "description": "Your description here.",
   "scripts": {
     "build:dev": "webpack-dev-server --inline --progress --port 8080",
-    "build:prod": "rimraf dist && webpack --config webpack.prod.js --progress --profile --bail",
+    "build:prod": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "e2e": "protractor e2e/protractor.conf.js",
     "lint": "tslint \"src/**/*.ts\"",
     "postinstall": "webdriver-manager update",
