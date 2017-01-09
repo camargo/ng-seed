@@ -48,7 +48,7 @@ Build image and run container from that image:
 
 ```bash
 npm run build:prod
-docker build -t app-image ./dist
+docker build -t app-image $(pwd)/dist
 docker run --name app -d -p 8081:80 app-image
 ```
 
