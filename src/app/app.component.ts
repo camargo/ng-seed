@@ -8,8 +8,8 @@ import { AppApiService } from './shared';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  public title: string = 'Hello, App!';
-  public ip: string = '';
+  public title = 'Hello, App!';
+  public ip = '';
 
   constructor(public appApiService: AppApiService) {}
 

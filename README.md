@@ -6,7 +6,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
 
 ## Features
 
-1. Latest stable version of Angular: `4.0.0-beta.2 (2017-01-06)`
+1. Latest version of Angular: `4.0.0-beta.5 (2017-01-25)`
 2. Webpack 2
 3. Linting
 4. Unit Testing
@@ -15,7 +15,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
 7. Routing
   - `/home`:  Not lazy-loaded
   - `/about`: Lazy-loaded
-8. HTTP Request via Service (Get public IP address)
+8. HTTP Request via Service (GET public IP address)
 9. Dev build (via Webpack Dev Server) and Prod build (via AOT)
 
 ## Download Project & Install Dependencies
