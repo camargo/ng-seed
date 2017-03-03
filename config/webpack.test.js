@@ -1,4 +1,6 @@
-var helpers = require('./helpers');
+const webpack = require('webpack');
+const helpers = require('./helpers');
+const path = require('path');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -36,6 +38,14 @@ module.exports = {
       }
     ]
   },
+
+  plugins: [
+    // see https://github.com/angular/angular/issues/11580
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)@angular/,
+      path.resolve(__dirname, '../src')
+    )
+  ],
 
   performance: {
     hints: false

@@ -7,7 +7,7 @@ describe('About', () => {
   });
 
   it ('should work', () => {
-    let fixture = TestBed.createComponent(AboutComponent);
+    const fixture = TestBed.createComponent(AboutComponent);
     expect(fixture.componentInstance instanceof AboutComponent).toBe(true, 'should create AboutComponent');
   });
 });

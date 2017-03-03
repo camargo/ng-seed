@@ -1,9 +1,9 @@
-let webpack = require('webpack');
-let ngToolsWebpack = require('@ngtools/webpack');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let helpers = require('./helpers');
+const webpack = require('webpack');
+const ngToolsWebpack = require('@ngtools/webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const helpers = require('./helpers');
 
-let webpackProdConfig = {
+const webpackProdConfig = {
   entry: {
     'vendor': './src/browser.vendor.ts',
     'app': './src/browser.main.ts',
@@ -13,10 +13,12 @@ let webpackProdConfig = {
       'zone.js/dist/zone'
     ]
   },
+
   output: {
     path: __dirname + '/../dist',
     filename: '[name].[hash].js'
   },
+
   module: {
     loaders: [
       {
@@ -34,28 +36,32 @@ let webpackProdConfig = {
       }
     ]
   },
+
   resolve: {
     extensions: [ '.js', '.ts', '.html', '.css' ]
   },
+
   plugins: [
     // see https://github.com/angular/angular/issues/11580
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
       './src'
     ),
+
     new webpack.optimize.CommonsChunkPlugin({
       name: 'polyfills'
     }),
+
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
+
     new webpack.DefinePlugin({
-      app: {
-        environment: JSON.stringify('prod')
+      'process.env': {
+        'ENV': JSON.stringify('production')
       }
     })
   ]
-
 };
 
 webpackProdConfig.plugins.push(new ngToolsWebpack.AotPlugin({

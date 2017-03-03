@@ -1,10 +1,10 @@
-let webpack = require('webpack');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let helpers = require('./helpers');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const helpers = require('./helpers');
+const path = require('path');
 
-let webpackDevConfig = {
-
+const webpackDevConfig = {
   entry: {
     'vendor': './src/browser.vendor.ts',
     'app': './src/browser.main.ts',
@@ -51,12 +51,24 @@ let webpackDevConfig = {
   },
 
   plugins: [
+    // see https://github.com/angular/angular/issues/11580
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)@angular/,
+      path.resolve(__dirname, '../src')
+    ),
+
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),
 
     new HtmlWebpackPlugin({
       template: 'src/index.html'
+    }),
+
+    new webpack.DefinePlugin({
+      'process.env': {
+        'ENV': JSON.stringify('dev')
+      }
     })
   ],
 

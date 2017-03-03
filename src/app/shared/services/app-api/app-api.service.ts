@@ -8,8 +8,8 @@ export class AppApiService {
 
   constructor(public http: Http) {}
 
-  getIpAddress() {
-    let url = 'http://ip.jsontest.com/';
+  public getIpAddress() {
+    const url = 'http://ip.jsontest.com/';
 
     return this.http.get(url)
                     .map((res: any) => res.json());
