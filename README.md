@@ -15,7 +15,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
 7. Routing
   - `/home`:  Not lazy-loaded
   - `/about`: Lazy-loaded
-8. HTTP Request via Service (GET public IP address)
+8. HTTP Request via Service (`GET` public IP address)
 9. Dev build (via Webpack Dev Server), and Prod build (via AOT)
 
 ## Download Project & Install Dependencies
@@ -52,7 +52,7 @@ docker build -t app-image $(pwd)/dist
 docker run --name app -d -p 8081:80 app-image
 ```
 
-Just run container:
+**Or** just run container:
 
 ```bash
 npm run build:prod
