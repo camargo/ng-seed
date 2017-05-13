@@ -3,7 +3,9 @@ import { AboutComponent } from './../../../src/app/about/about.component';
 
 describe('About', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({ declarations: [AboutComponent]});
+    TestBed.configureTestingModule({
+      declarations: [ AboutComponent ]
+    });
   });
 
   it ('should work', () => {

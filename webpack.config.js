@@ -9,8 +9,8 @@ module.exports = (env = {}) => {
   // Main Webpack config object.
   const webpackConfig = {
     entry: {
-      'vendor': './src/browser.vendor.ts',
       'app': './src/browser.main.ts',
+      'vendor': './src/browser.vendor.ts',
       'polyfills': [
         'core-js/es6',
         'core-js/es7/reflect',
@@ -38,7 +38,16 @@ module.exports = (env = {}) => {
     },
     {
       test: /\.css$/,
-      use: 'raw-loader'
+      use: 'raw-loader',
+      include: __dirname + '/src/app'
+    },
+    {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader'
+      ],
+      exclude: __dirname + '/src/app'
     }
   ];
 

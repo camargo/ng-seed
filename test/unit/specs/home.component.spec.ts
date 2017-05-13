@@ -3,7 +3,9 @@ import { HomeComponent } from './../../../src/app/home/home.component';
 
 describe('Home', () => {
   beforeEach(() => {
-    TestBed.configureTestingModule({ declarations: [HomeComponent]});
+    TestBed.configureTestingModule({
+      declarations: [ HomeComponent ]
+    });
   });
 
   it ('should work', () => {

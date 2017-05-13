@@ -1,10 +1,8 @@
-<span class="app-title">
-  {{title}} (IP: {{ip}})
-</span>
+<md-card>{{title}} (IP: {{ip}})</md-card>
 
 <nav>
-  <a routerLink="/home" routerLinkActive="active">Home</a>
-  <a routerLink="/about" routerLinkActive="active">About</a>
+  <a md-raised-button routerLink="/home" routerLinkActive="active">Home</a>
+  <a md-raised-button routerLink="/about" routerLinkActive="active">About</a>
 </nav>
 
 <router-outlet></router-outlet>

@@ -31,5 +31,5 @@ module.exports = {
       /angular(\\|\/)core(\\|\/)@angular/,
       __dirname + '/../../src'
     )
-  ],
+  ]
 }

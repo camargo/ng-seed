@@ -6,8 +6,8 @@ import { AppApiService } from './../../../src/app/shared/services/app-api/app-ap
 describe('App Api Service', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
-      providers: [AppApiService]
+      imports: [ HttpModule ],
+      providers: [ AppApiService ]
     });
   });
 
