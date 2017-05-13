@@ -2,21 +2,19 @@ exports.config = {
   baseUrl: 'http://localhost:8080/',
 
   specs: [
-    './specs/**/*.e2e.spec.ts'
+    './specs/**/*.spec.ts'
   ],
   exclude: [],
 
   framework: 'jasmine2',
 
-  allScriptsTimeout: 110000,
-
   jasmineNodeOpts: {
     showTiming: true,
     showColors: true,
     isVerbose: false,
-    includeStackTrace: false,
-    defaultTimeoutInterval: 400000
+    includeStackTrace: false
   },
+
   directConnect: true,
 
   capabilities: {
@@ -28,14 +26,5 @@ exports.config = {
 
   onPrepare: function () {
     browser.ignoreSynchronization = false;
-  },
-
-  /**
-   * Angular 2 configuration
-   *
-   * useAllAngular2AppRoots: tells Protractor to wait for any angular2 apps on the page instead of just the one matching
-   * `rootEl`
-   *
-   */
-  useAllAngular2AppRoots: true
+  }
 };

@@ -3,8 +3,8 @@ import { provideRoutes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { AppApiService } from './shared';
+import { AppComponent } from './../../../src/app/app.component';
+import { AppApiService } from './../../../src/app/shared/services/app-api/app-api.service';
 
 describe('App', () => {
   beforeEach(() => {

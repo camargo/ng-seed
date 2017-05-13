@@ -11,5 +11,9 @@
   "compileOnSave": false,
   "angularCompilerOptions": {
     "skipMetadataEmit": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "test"
+  ]
 }
