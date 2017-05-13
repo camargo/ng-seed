@@ -13,8 +13,8 @@ To get started, change all occurrences of `"app"` in this project to your app na
 5. Integration Testing ([Protractor](http://www.protractortest.org/))
 6. Docker
 7. Routing
-  - `/home`:  Not lazy-loaded
-  - `/about`: Lazy-loaded
+    - `/home`:  Not lazy-loaded
+    - `/about`: Lazy-loaded
 8. HTTP Request via Service (`GET` public IP address)
 9. Dev build (via Webpack Dev Server), and Prod build (via AOT)
 
