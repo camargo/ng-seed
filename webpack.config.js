@@ -3,6 +3,9 @@ const ngToolsWebpack = require('@ngtools/webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env = {}) => {
+  // Prod or Dev.
+  const environment = env.prod ? JSON.stringify('prod') : JSON.stringify('dev');
+
   // Main Webpack config object.
   const webpackConfig = {
     entry: {
@@ -50,10 +53,20 @@ module.exports = (env = {}) => {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['app', 'vendor', 'polyfills']
+    }),
+
+    new webpack.DefinePlugin({
+      'process.env': {
+        'ENV': environment
+      }
+    })
   ];
 
   // Production.
-  if (env.production) {
+  if (env.prod) {
     // Loaders.
     loaders.push({
       test: /\.ts$/,
@@ -62,16 +75,6 @@ module.exports = (env = {}) => {
 
     // Plugins.
     plugins.push(
-      new webpack.optimize.CommonsChunkPlugin({
-        name: 'polyfills'
-      }),
-
-      new webpack.DefinePlugin({
-        'process.env': {
-          'ENV': JSON.stringify('production')
-        }
-      }),
-
       new ngToolsWebpack.AotPlugin({
         tsConfigPath: __dirname + '/tsconfig.prod.json',
         entryModule: __dirname + '/src/app/app.module#AppModule',
@@ -91,21 +94,10 @@ module.exports = (env = {}) => {
       ]
     });
 
-    // Plugins.
-    plugins.push(
-      new webpack.optimize.CommonsChunkPlugin({
-        name: ['app', 'vendor', 'polyfills']
-      }),
-
-      new webpack.DefinePlugin({
-        'process.env': {
-          'ENV': JSON.stringify('dev')
-        }
-      })
-    );
-
+    // Dev Tool.
     webpackConfig.devtool = 'eval-source-map';
 
+    // Dev Server.
     webpackConfig.devServer = {
       historyApiFallback: true,
       port: 8080,

@@ -4,7 +4,7 @@
   "description": "Your description here.",
   "scripts": {
     "build:dev": "webpack-dev-server --env.dev",
-    "build:prod": "rimraf dist && webpack --progress --profile --bail --env.production",
+    "build:prod": "rimraf dist && webpack --progress --profile --bail --env.prod",
     "integration": "protractor test/integration/protractor.conf.js",
     "lint": "tslint  \"src/**/*.ts\"",
     "postinstall": "webdriver-manager update",
