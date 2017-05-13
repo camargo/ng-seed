@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const path = require('path');
 
 module.exports = {
   resolve: {
@@ -30,7 +29,7 @@ module.exports = {
     // see https://github.com/angular/angular/issues/11580
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)@angular/,
-      path.resolve(__dirname, '/../../src')
+      __dirname + '/../../src'
     )
   ],
 }
