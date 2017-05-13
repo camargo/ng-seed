@@ -4,6 +4,7 @@ exports.config = {
   specs: [
     './specs/**/*.spec.ts'
   ],
+
   exclude: [],
 
   framework: 'jasmine2',

@@ -10,7 +10,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
 2. Webpack 2
 3. Linting ([TSLint](https://palantir.github.io/tslint/) & [Codelyzer](https://github.com/mgechev/codelyzer))
 4. Unit Testing ([Karma](https://karma-runner.github.io/) & [Jasmine](https://jasmine.github.io/))
-5. Integration Testing ([Protractor](http://www.protractortest.org/))
+5. E2E Testing ([Protractor](http://www.protractortest.org/))
 6. Docker
 7. Routing
     - `/home`:  Not lazy-loaded
@@ -73,8 +73,8 @@ npm run lint
 npm run unit
 ```
 
-## Run Integration Tests
+## Run E2E Tests
 
 ```bash
-npm run integration
+npm run e2e
 ```
