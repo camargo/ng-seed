@@ -97,7 +97,7 @@ module.exports = (env = {}) => {
       use: [
         'awesome-typescript-loader',
         'angular2-template-loader',
-        'angular2-router-loader'
+        'angular-router-loader'
       ]
     });
 
@@ -106,7 +106,6 @@ module.exports = (env = {}) => {
 
     // Dev Server.
     webpackConfig.devServer = {
-      historyApiFallback: true,
       port: 8080,
       stats: 'minimal'
     }
