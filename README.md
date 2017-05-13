@@ -6,7 +6,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
 
 ## Features
 
-1. Latest version of Angular: `4.0.0-rc.2 (2017-03-02)`
+1. Latest version of Angular: `4.1.2 (2017-05-10)`
 2. Webpack 2
 3. Linting ([TSLint](https://palantir.github.io/tslint/) & [Codelyzer](https://github.com/mgechev/codelyzer))
 4. Unit Testing ([Karma](https://karma-runner.github.io/) & [Jasmine](https://jasmine.github.io/))
@@ -61,7 +61,7 @@ docker run --name app -v $(pwd)/dist:/usr/share/nginx/html:ro -d -p 8081:80 ngin
 
 Visit [http://localhost:8081/](http://localhost:8081/) to view the running application.
 
-## Lint
+## Run Linting
 
 ```bash
 npm run lint
