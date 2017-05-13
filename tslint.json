@@ -8,7 +8,6 @@
     "ordered-imports": false,
     "quotemark": [true, "single", "avoid-escape"],
     "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
-
     "directive-selector": [true, "attribute", "app", "camelCase"],
     "component-selector": [true, "element", "app", "kebab-case"],
     "use-input-property-decorator": true,
