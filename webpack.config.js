@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const ngToolsWebpack = require('@ngtools/webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
 
 module.exports = (env = {}) => {
   // Main Webpack config object.
