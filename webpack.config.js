@@ -59,9 +59,7 @@ module.exports = (env = {}) => {
     }),
 
     new webpack.DefinePlugin({
-      'process.env': {
-        'ENV': environment
-      }
+      'process.env': environment
     })
   ];
 
