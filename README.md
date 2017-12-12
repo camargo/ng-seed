@@ -1,13 +1,13 @@
 # ng-seed
 
-This is a basic application that you can use to bootstrap your new Angular 2 project.
+This is a basic application that you can use to bootstrap your new Angular project.
 
 To get started, change all occurrences of `"app"` in this project to your app name.
 
 ## Features
 
 1. Latest version of Angular: `5.1.0 (2017-12-06)`
-2. Webpack 2
+2. Webpack 3
 3. Linting ([TSLint](https://palantir.github.io/tslint/) & [Codelyzer](https://github.com/mgechev/codelyzer))
 4. Unit Testing ([Karma](https://karma-runner.github.io/) & [Jasmine](https://jasmine.github.io/))
 5. E2E Testing ([Protractor](http://www.protractortest.org/))
