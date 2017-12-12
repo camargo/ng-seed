@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 import { provideRoutes } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpModule } from '@angular/http';
-import { MdCardModule, MdButtonModule } from '@angular/material';
 
 import { AppComponent } from './../../../src/app/app.component';
 import { AppApiService } from './../../../src/app/shared/services/app-api/app-api.service';
@@ -12,9 +11,7 @@ describe('App', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpModule,
-        MdCardModule,
-        MdButtonModule
+        HttpModule
       ],
       declarations: [ AppComponent ],
       providers: [ AppApiService, provideRoutes([]) ]

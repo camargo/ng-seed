@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const ngToolsWebpack = require('@ngtools/webpack');
+const ngTools = require('@ngtools/webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env = {}) => {
@@ -53,12 +53,6 @@ module.exports = (env = {}) => {
 
   // Common plugins.
   const plugins = [
-    // see https://github.com/angular/angular/issues/11580
-    new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      __dirname + '/src'
-    ),
-
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
@@ -76,16 +70,17 @@ module.exports = (env = {}) => {
   if (env.prod) {
     // Loaders.
     loaders.push({
-      test: /\.ts$/,
+      test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
       loader: '@ngtools/webpack'
     });
 
     // Plugins.
     plugins.push(
-      new ngToolsWebpack.AotPlugin({
+      new ngTools.AngularCompilerPlugin({
         tsConfigPath: __dirname + '/tsconfig.prod.json',
         entryModule: __dirname + '/src/app/app.module#AppModule',
-        mainPath: __dirname + '/src/browser.main.ts'
+        mainPath: __dirname + '/src/browser.main.ts',
+        sourceMap: true
       })
     );
   }
@@ -100,6 +95,23 @@ module.exports = (env = {}) => {
         'angular-router-loader'
       ]
     });
+
+    // Plugins.
+    plugins.push(
+      // see https://github.com/angular/angular/issues/11580
+      new webpack.ContextReplacementPlugin(
+          /**
+           * The (\\|\/) piece accounts for path separators in *nix and Windows
+           */
+          /(.+)?angular(\\|\/)core(.+)?/,
+          __dirname + '/src', // location of your src
+          {
+            /**
+             * Your Angular Async Route paths relative to this root directory
+             */
+          }
+      ),
+    );
 
     // Dev Tool.
     webpackConfig.devtool = 'eval-source-map';

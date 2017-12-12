@@ -17,7 +17,6 @@ To get started, change all occurrences of `"app"` in this project to your app na
     - `/about`: Lazy-loaded
 8. HTTP Request via Service (`GET` public IP address)
 9. Dev build (via Webpack Dev Server), and Prod build (via AOT)
-10. [Angular Material 2](https://github.com/angular/material2)
 
 ## Download Project & Install Dependencies
 
