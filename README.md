@@ -1,5 +1,5 @@
 # ng-seed
-***Note: This project was made when the [Angular CLI](https://cli.angular.io/) was immature. I now reccomend using the CLI for starting new Angular projects.***
+***Note: This project was made when the [Angular CLI](https://cli.angular.io/) was immature. I now recommend using the CLI for starting new Angular projects.***
 
 This is a basic application that you can use to bootstrap your new Angular project.
 To get started, change all occurrences of `"app"` in this project to your app name.
