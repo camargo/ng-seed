@@ -6,7 +6,7 @@ To get started, change all occurrences of `"app"` in this project to your app na
 
 ## Features
 
-1. Latest version of Angular: `5.1.0 (2017-12-06)`
+1. Angular `5.1.0 (2017-12-06)`
 2. Webpack 3
 3. Linting ([TSLint](https://palantir.github.io/tslint/) & [Codelyzer](https://github.com/mgechev/codelyzer))
 4. Unit Testing ([Karma](https://karma-runner.github.io/) & [Jasmine](https://jasmine.github.io/))
